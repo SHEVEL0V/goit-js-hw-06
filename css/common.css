@@ -28,6 +28,9 @@ button {
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: 10px;
 }
+.gallery li {
+  list-style: none;
+}
 .gallery img {
   max-width: 500px;
 }

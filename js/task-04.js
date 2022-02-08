@@ -1,8 +1,6 @@
-const counterEl = document.querySelector("#counter");
-
-const btnDecrement = counterEl.querySelector("button[data-action='decrement']");
-const btnIncrement = counterEl.querySelector("button[data-action='increment']");
-const valueEl = counterEl.querySelector("#value");
+const btnDecrement = document.querySelector("button[data-action='decrement']");
+const btnIncrement = document.querySelector("button[data-action='increment']");
+const valueEl = document.querySelector("#value");
 
 let value = 0;
 
