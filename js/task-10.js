@@ -1,8 +1,7 @@
-const controlsEl = document.querySelector("#controls");
 const boxesEl = document.querySelector("#boxes");
-const btnCreate = controlsEl.querySelector("button[data-create]");
-const btnDestroy = controlsEl.querySelector("button[data-destroy]");
-const input = controlsEl.querySelector("input");
+const btnCreate = document.querySelector("button[data-create]");
+const btnDestroy = document.querySelector("button[data-destroy]");
+const input = document.querySelector("input");
 
 btnCreate.addEventListener("click", () => {
   createBoxes(input.value);
@@ -12,11 +11,14 @@ btnCreate.addEventListener("click", () => {
 btnDestroy.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
+  const dimensionsFirstItem = 30;
+  const stepNextEl = 10;
+
   const createElements = [];
   for (let i = 0; i < amount; i += 1) {
     const el = document.createElement("div");
-    el.style.width = `${i * 10 + 30}px`;
-    el.style.height = `${i * 10 + 30}px`;
+    el.style.width = `${i * stepNextEl + dimensionsFirstItem}px`;
+    el.style.height = `${i * stepNextEl + dimensionsFirstItem}px`;
     el.style.backgroundColor = getRandomHexColor();
     createElements.push(el);
   }
@@ -24,6 +26,7 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
+  input.value = "";
   boxesEl.innerHTML = "";
 }
 

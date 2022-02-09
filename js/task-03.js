@@ -18,6 +18,6 @@ const makeGalieryItem = ({ url, alt }) => {
 };
 
 const galleryRel = document.querySelector(".gallery");
-const makeGallery = images.map(makeGalieryItem).join();
+const makeGallery = images.map(makeGalieryItem).join().replaceAll(",", "");
 
 galleryRel.insertAdjacentHTML("beforeend", makeGallery);
