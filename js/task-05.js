@@ -5,3 +5,5 @@ input.addEventListener("input", (text) => {
   output.textContent =
     input.value.length !== 0 ? text.currentTarget.value : "Anonymous";
 });
+
+// output.textContent = value || defaultName;
